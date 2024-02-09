@@ -1,0 +1,31 @@
+<!-- Question 1: FizzBuzz 
+Write a program that prints the numbers from 1 to 100. For multiples of 3, print "Fizz"; for multiples of 5, print "Buzz"; and for numbers that are multiples of both 3 and 5, print "FizzBuzz". 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <script>
+        for (let i = 1; i <= 100; i++) {
+            let output = "";
+
+            if (i % 3 === 0) {
+                output += "Fizz";
+            }
+            if (i % 5 === 0) {
+                output += "Buzz";
+            }
+
+            // Create a new paragraph element for each number or Fizz/Buzz/FizzBuzz
+            const paragraph = document.createElement("p");
+            paragraph.textContent = output || i;
+            document.body.appendChild(paragraph);
+        }
+    </script>
+</body>
+</html>

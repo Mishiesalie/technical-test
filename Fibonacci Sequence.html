@@ -1,0 +1,43 @@
+<!-- Question 2: Fibonacci Sequence 
+Write a program to generate the Fibonacci sequence up to 100.  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Sequence</title>
+</head>
+<body>
+    <h1>Fibonacci Sequence up to 100</h1>
+    <ul id="fibonacci-list"></ul>
+
+    <script>
+        function generateFibonacci(limit) {
+            const fibonacciSequence = [0, 1];
+
+            for (let i = 2; i <= limit; i++) {
+                const nextNumber = fibonacciSequence[i - 1] + fibonacciSequence[i - 2];
+                if (nextNumber <= limit) {
+                    fibonacciSequence.push(nextNumber);
+                } else {
+                    break;
+                }
+            }
+
+            return fibonacciSequence;
+        }
+
+        const limit = 100;
+        const fibonacciNumbers = generateFibonacci(limit);
+        const listElement = document.getElementById("fibonacci-list");
+
+        fibonacciNumbers.forEach(number => {
+            const listItem = document.createElement("li");
+            listItem.textContent = number;
+            listElement.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>

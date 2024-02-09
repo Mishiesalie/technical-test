@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse Integer</title>
+</head>
+<body>
+    <h1>Reverse Integer</h1>
+    <label for="inputNumber">Enter an integer:</label>
+    <input type="number" id="inputNumber">
+    <button onclick="reverseDigits()">Reverse</button>
+    <p id="output"></p>
+
+    <script>
+        function reverseDigits() {
+            const inputElement = document.getElementById("inputNumber");
+            const inputValue = parseInt(inputElement.value);
+
+            // Handle negative numbers
+            const sign = Math.sign(inputValue);
+            const absoluteValue = Math.abs(inputValue);
+
+            // Reverse the digits
+            const reversedValue = parseInt(absoluteValue.toString().split("").reverse().join("")) * sign;
+
+            document.getElementById("output").textContent = reversedValue;
+        }
+    </script>
+</body>
+</html>

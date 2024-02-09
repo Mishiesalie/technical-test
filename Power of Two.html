@@ -1,0 +1,40 @@
+ 
+<!-- Question 3: Power of Two  -->
+<!-- Write a program that takes an integer as input and returns true if the input is a power of two. -->
+<!-- Examples:   -->
+<!-- 8=> returns true  -->
+<!-- 6=> returns false  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power of Two</title>
+</head>
+<body>
+    <h1>Power of Two</h1>
+    <label for="numberInput">Enter an integer:</label>
+    <input type="number" id="numberInput">
+    <button onclick="checkPowerOfTwo()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function isPowerOfTwo(n) {
+            if (n === 0) return false;
+            return (n & (n - 1)) === 0;
+        }
+
+        function checkPowerOfTwo() {
+            const inputElement = document.getElementById("numberInput");
+            const inputValue = parseInt(inputElement.value);
+
+            if (isPowerOfTwo(inputValue)) {
+                document.getElementById("result").textContent = "True";
+            } else {
+                document.getElementById("result").textContent = "False";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- Question 4: Capitalize Words  
+Write a program that accepts a string as input, capitalizes the first letter of each word in the string, and then returns the result string. 
+Examples:  
+ 
+"hi"=> returns "Hi" 
+ "i love programming"=> returns "I Love Programming"  -->
+
+
+<!DOCTYPE html>
+<html>
+    //Question 4: Write a program that accepts a string as input, capitalizes the first letter of each word in the string, and then returns the result string. 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize Words</title>
+</head>
+<body>
+    <h1>Capitalize Words</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString">
+    <button onclick="capitalizeWords()">Capitalize</button>
+    <p id="output"></p>
+
+    <script>
+        function capitalizeWords() {
+            const inputElement = document.getElementById("inputString");
+            const inputString = inputElement.value.trim();
+
+            if (!inputString) {
+                document.getElementById("output").textContent = "Please enter a valid string.";
+                return;
+            }
+
+            const words = inputString.split(" ");
+            const capitalizedWords = words.map(word => {
+                const firstLetter = word.charAt(0).toUpperCase();
+                const restOfWord = word.slice(1).toLowerCase();
+                return firstLetter + restOfWord;
+            });
+
+            const result = capitalizedWords.join(" ");
+            document.getElementById("output").textContent = result;
+        }
+    </script>
+</body>
+</html>
